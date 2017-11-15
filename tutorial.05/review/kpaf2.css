@@ -1,0 +1,116 @@
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 5
+   Review Assignment
+
+   KPAF General Style Sheet
+  
+
+   Filename:         kpaf2.css
+   Supporting Files: none
+
+*/
+
+/* Default styles */
+
+* {
+   margin: 0px;
+   list-style: none;
+}
+
+header, section, footer, nav {
+   display: block;
+}
+
+
+
+/* Body styles */
+body {
+   background-color: white;
+   font-family: Verdana, Geneva, sans-serif;
+   margin: 0px auto;
+   width: 1000px;
+}
+
+/* Header styles */
+header {
+   background-color: rgb(215, 205, 151);
+   border-bottom: 1px solid rgb(105, 177, 60);
+   color: white;
+}
+
+header h1 {
+   color: white; 
+   background-color: rgb(105, 177, 60);
+   font-size: 1.1em; 
+   padding: 5px 0px 5px 12px;
+}
+
+header h1 em {
+   font-size: 0.7em;
+}
+
+
+
+/* Navigation list styles */
+
+header nav ul li {
+   display: inline; 
+   font-size: 0.7em; 
+   font-family: 'Courier New', monospace;
+   background-color: rgb(215, 205, 151);
+   padding: 0px 10px; 
+   margin: 0px;
+}
+
+header nav ul li a {
+   text-decoration: none; 
+   color: rgb(105, 177, 60);
+}
+
+
+header nav ul li a:hover {
+   color: rgb(153, 0, 153);
+}
+
+
+
+/* intro section styles */
+
+#intro {
+   width: 100%;   
+}
+
+
+
+#intro hgroup h2 {
+   color: white;  
+   background-color: rgb(153, 0, 153);
+   font-size: 1.1em; 
+   letter-spacing: 5px;
+   padding: 5px 0px 5px 12px;
+}
+
+#intro p {
+   line-height: 1.4em;
+   margin: 15px;
+}
+
+
+
+
+/* Footer styles */   
+
+footer {
+   clear: left;
+   padding-top: 10px;
+}
+
+footer address {
+   font-size: 0.65em;
+   font-style: normal;
+   text-align: center;
+   color: white;
+   background-color: rgb(105, 177, 60);
+   margin: 20px 0px;
+}

@@ -1,0 +1,155 @@
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 6
+   Case Problem 1
+
+   Sblogger Style Sheet
+   Author: Steve Lavent
+   Date:   3/1/2014
+
+   Filename:         blog.css
+   Supporting Files: 
+
+*/
+
+/* Display HTML5 structural elements as blocks */
+
+article, aside, figure, figcaption, footer, hgroup, header, 
+section, nav {
+   display: block;
+}
+
+
+/* Set the default page element styles */
+
+body * {
+   font-family: Verdana, Geneva, sans-serif;
+   font-size: 100%;
+   font-weight: inherit;
+   line-height: 1.2em;
+   list-style: none;
+   margin: 0px;
+   padding: 0px;
+   text-decoration: none;
+   vertical-align: baseline;
+}
+
+body {
+   margin: 10px auto;
+   width: 90%;
+   min-width: 820px;
+   max-width: 1400px;
+   
+}
+
+
+header {
+   background-color: white; 
+   border-bottom: 1px solid rgb(81,105,165);
+   width: 99%; 
+}
+
+nav {
+   background-color: rgb(81, 105, 167);
+   float: left; 
+   min-height: 820px;
+   width: 15%;
+}
+
+nav ul {
+   list-style-type: none; 
+   padding-left: 0px;
+   margin-left: 15px;
+}
+
+nav ul li {
+   font-size: 0.8em;
+}
+
+nav li.linktitle {
+   color: rgb(229, 247, 165); 
+   font-size: 0.9em;
+   margin: 20px 0px 2px;
+}
+
+nav ul li a {
+   color: white;
+   text-decoration: none; 
+}
+
+nav ul li a:hover {
+   color: black;
+}
+
+section {
+   float: left; 
+   min-height: 820px;
+   width: 60%; 
+   padding: 0x 10px;
+   border-right: 1px solid rgb(81, 105, 165);
+   background-color: rgb(235, 240 ,255);
+}
+
+section hgroup h1 {
+   font-size: 1.5em;
+   font-weight: normal;
+   color: rgb(0, 78, 156);
+   letter-spacing: 5px;
+   margin: 5px 0px 0px 5px;
+}
+
+section hgroup h2 {
+   font-size: 0.7em;
+   color: rgb(80, 158, 235);
+   text-align: right;
+   font-weight: normal;
+   margin: 0px 20px 10px 5px;
+}
+
+section h2 {
+   font-size: 1em;
+   color: rgb(80, 158, 235);
+   margin: 10px 0px 5px 0px;
+   text-indent: 10px;
+}
+
+
+section p {
+   font-size: 0.9em;
+   margin: 10px;
+}
+
+section cite {
+   display: block;
+   font-size: 0.8em;
+   text-align: right;
+   padding-bottom: 7px;
+   margin: 0px 20px 10px 0px;
+   border-bottom: 1px solid rgb(0, 78, 156);
+}
+
+aside {
+   background-color: rgb(255, 255, 193); 
+   float: left;
+   min-height: 820px;
+   width: 24%;
+}
+
+aside h1 {
+   font-size: 1.1em;
+   font-weight: normal;
+   letter-spacing: 3px;
+   text-align: center;
+}
+
+aside li {
+   border-bottom: 1px solid rgb(181, 179, 3);
+   font-size: 0.85em;
+   margin: 10px 0px 10px 10px;
+   padding-bottom: 5px;
+}
+
+aside span {
+   font-size: 0.7em;
+}
+

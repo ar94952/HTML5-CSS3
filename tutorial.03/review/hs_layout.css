@@ -1,0 +1,58 @@
+/*
+   New Perspectives on HTML
+   Tutorial 3
+   Review Assignment
+
+   Sunny Acres Layout Styles
+   Author: Tammy Nielsen
+   Date:   3/1/2014
+
+   Filename:         hs_layout.css
+   Supporting Files: none
+
+*/
+
+/* Layout styles */
+
+
+body {
+margin: 0px auto;
+padding: 0px;
+width: 98%;
+max-width: 800px;
+min-width: 250px;
+}
+
+header, footer {
+margin: 0px auto;
+}
+
+nav {
+width: 200px;
+float: left;
+margin-right: 10px;
+margin-top: -35px;
+}
+
+figure {
+   float: right;
+   border: 1px solid black;
+   width: 270px;
+   margin: 0px 0px 10px 10px;
+}
+
+section {
+width: 590px;
+float: left;
+margin-top: -43px;
+}
+
+section img {
+float:  right;
+margin: 15px;
+}
+
+footer address {
+clear: both;
+width: 100%;
+}

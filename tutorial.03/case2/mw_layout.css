@@ -1,0 +1,82 @@
+﻿/*
+   New Perspectives on HTML and CSS
+   Tutorial 3
+   Case Problem 2
+
+   Mountain Wheels Layout Style
+   Author: Adriana Turchenko
+   Date:   3/1/2014
+
+   Filename:         mw_layout.css
+   Supporting Files: none
+
+*/
+
+/* Layout styles */
+
+
+body {
+   margin: 0px auto;
+   padding: 0px;
+   width: 900px;
+}
+
+header, footer {
+   margin: 0px auto;
+}
+
+nav {
+   float: left;
+   margin-right: 10px;
+   width: 150px;
+}
+
+#leftsection {
+   float: left;
+   margin-right: 15px;
+   width: 450px;
+}
+
+#rightsection {
+   float: left;
+   width: 200px;
+}
+
+#articleheader {
+   float: left;
+   width: 650px;
+}
+
+
+h1, h2 {
+   margin: 0px;
+   padding: 0px;
+}
+
+#articleheader h1 {
+   margin-bottom: 10px;
+}
+
+blockquote {
+   border: 1px solid black;
+   float: right;
+   padding: 20px;
+   width: 170px;
+
+   -moz-border-radius: 35px;
+   border-radius: 35px;
+   box-shadow:10px 10px 20px #000;
+   -webkit-box-shadow:10px 10px 20px #000;
+   -moz-box-shadow: 10px 10px 20px #000;
+}
+
+section p {
+   margin-top: 0px;
+   margin-bottom: 20px;
+}
+
+footer address {
+   border-top: 1px solid black;
+   clear: left;
+}
+

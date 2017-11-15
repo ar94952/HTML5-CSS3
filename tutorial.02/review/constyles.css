@@ -1,0 +1,234 @@
+﻿/*
+   New Perspectives on HTML
+   Tutorial 2
+   Review Assignment
+
+   CAMShots Contest Style Sheet
+   Author: Gerry Hayward
+   Date:   3/1/2014
+
+   Filename:         constyles.css
+   Supporting Files: none
+
+*/
+
+/* Section Styles */
+
+body {
+margin: 0px auto;
+padding: 0px;
+line-height: 1.5em;
+width: 98%;
+max-width: 780px;
+min-width: 250px;
+font-family: Verdana, Geneva, sans-serif
+}
+
+header {
+width: 100%;
+text-align: left;
+}
+
+nav {
+display: block;
+width: 100%;
+}
+
+section nav {
+font-size: 0.9em;
+text-align: center;
+padding-bottom: 20px;
+}
+
+
+nav ul {
+list-style-type: none;
+margin: 0px;
+padding: 0px;
+font-size: 0.8em;
+}
+
+nav ul li {
+display: block;
+float: left;
+width: 15.6%;
+height: 20px;
+text-align: center;
+border: 1px solid #2d04ff;
+background-color: #afd3f3;
+line-height: 1.5em;
+margin: 0px 4px 5px 0px;
+}
+
+section {
+width: 60%;
+float: left;
+}
+
+section.full {
+width: 100%;
+}
+
+section p {
+font-size: 0.9em;
+margin: 0px 20px 10px 0px;
+}
+
+section.full h1 {
+text-align: right;
+font-size: 2em;
+letter-spacing: 0.1em;
+}
+
+section.full p {
+font-size: 0.9em;
+margin: 0px 0px 30px 0px;
+}
+
+section.full article h1 {
+font-size: 1.1em;
+text-align: left;
+letter-spacing: 0.5em;
+font-weight: normal;
+margin: 0px 0px 5px 0px;
+color: #2d04ff;
+}
+
+section.full article figure {
+display: block;
+width: 100%;
+margin-bottom: 10px;
+}
+
+section.full article figure img {
+display: block;
+margin: 0px auto;
+}
+
+
+aside {
+float: left;
+margin-top: 25px;
+width: 38%;
+border-left: 3px solid #2d04ff;
+border-top: 3px solid #2d04ff;
+border-bottom: 3px solid #2d04ff;
+border-radius: 25px 0px 0px 25px;
+-moz-border-radius: 25px 0px 0px 25px;
+-webkit-border-bottom-left-radius: 25px;
+-webkit-border-top-left-radius: 25px;
+}
+
+aside h1 {
+text-align: center;
+font-size: 1.1em;
+font-weight: normal;
+color: #2d04ff;
+margin: 5px 0px 0px;
+border-bottom: 2px solid #2d04ff;
+}
+
+aside p {
+font-size: 0.9em;
+margin: 10px 0px 10px 15px;
+}
+
+aside li {
+font-size: 0.8em;
+line-height: 1.1em;
+}
+
+footer {
+display: block;
+width: 100%;
+clear: left;
+text-align: center;
+margin-top: 5px;
+}
+
+footer address {
+display: block;
+width: 100%;
+clear: left;
+font-size: 0.8em;
+font-style: normal;
+font-variant: small-caps;
+margin-top: 20px;
+border-top: 3px solid #2d04ff;
+}
+
+
+/* Block Styles */
+h1, h2, h3, h4, h5, h6 {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+header h1 {
+margin: 1em 0em;
+font-size: 2em;
+}
+
+h2 {
+margin: 1em 0em;
+font-size: 1.5em;
+}
+
+header h1 {
+margin: 0px;
+}
+
+header h2 {
+font-size: 1.2em;
+font-style: italic;
+margin: 0em;
+padding-bottom: 0.5em;
+border-bottom:1px black solid;
+}
+
+article p {
+margin: 0.2em 0.9em 0.7em 0em;
+}
+
+article ul {
+margin: 0.1em 0.8em 0.5em;
+}
+
+article ul li {
+margin-right: 0.5em;
+}
+
+section.full h2 {
+width: 100%;
+font-size: 1.5em;
+margin:-130px 0px 10px 0px;
+}
+
+section.full ul {
+margin: 0px 0px 140px 0px;
+}
+
+dl {
+font-size: 0.9em;
+margin: 0px 0px 130px 60px;
+}
+
+dt b {
+font-size: 1.1em;
+}
+
+section.full div {
+clear: left;
+padding-top: 30px;
+padding-bottom: 30px;
+}
+
+img {
+border-width: 0px;
+}
+
+h2+p img {
+display: block;
+box-shadow:10px 10px 20px #000000;
+-webkit-box-shadow:10px 10px 20px #000000;
+-moz-box-shadow: 10px 10px 20px #000000;
+}

@@ -1,0 +1,93 @@
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 6
+   Case Problem 3
+
+   Style sheets for form elements
+   Author: Anna Lopez
+   Date:   3/1/2014
+
+   Filename:         cssforms.css
+   Supporting Files: 
+
+*/
+
+fieldset {
+   border: none;
+   display: block;
+   width: 60%;
+   margin: 10px 0px;
+}
+
+legend {
+   background-color: rgb(232, 232, 232);
+   color: black;
+   font-size: 0.9em;
+   text-indent: 5px;
+   width: 100%;
+   margin: 2px 0px;
+}
+
+label {
+   clear: left;
+   display: block;
+   float: left;
+   font-size: 0.9em;
+   width: 40%;
+   margin: 2px 0px;
+}
+
+input {
+   display: block;
+   float: left;
+   font-size: 0.9em;
+   width: 60%;
+   margin: 2px 0px;
+}
+
+select {
+   display: block;
+   float: left;
+   font-size: 0.9em;
+   margin: 2px 0px;
+   width: 120px;
+}
+
+fieldset.slider {
+   float: left;
+   width: 60%;
+   margin: 2px 0px;
+}
+
+fieldset.slider input {
+   display: inline;
+   float: none;
+   width: 150px; 
+}
+
+input[type="color"] {
+   width: 75px; 
+}
+
+
+fieldset#textstring {
+   float: right;
+   width: 300px;
+}
+
+textarea {
+   font-size: 0.9em;
+   width: 100%;
+   height: 200px;
+   margin-bottom: 15px;
+}
+
+input[type="button"] {
+   width: 150px;
+   margin: 10px;
+}
+
+
+
+
+   

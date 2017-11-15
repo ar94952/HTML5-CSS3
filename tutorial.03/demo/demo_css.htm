@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 
+   New Perspectives on HTML and CSS
+   Tutorial 3
+   Tutorial Case
+
+   CSS Demo
+   Author: Patrick Carey
+   Date:   3/1/2014
+
+   Filename:         demo_css.htm
+   Supporting files: demo.gif, demo2.gif
+-->
+<title>CSS Demo</title>
+<style type="text/css">
+/* use for all demo pages */
+   html       {height: 100%}
+   body       {background-color: white; background-image: url(demo2.gif); margin: 0px; 
+               width: 100%; height: 100%}
+   #demo_page {background-color: white; 
+               border-right: 5px solid rgb(0,0,128); position: absolute; top: 0px; left: 0px;
+               width: 1000px; padding-bottom: 15px; min-height: 100%}
+   * html #demo_page {height: 100%}
+
+   #demo_intro {width: 100%; position: relative; margin: 0px 10px}
+   #demo_intro table {margin: 0px; padding: 0px; border: 0px; width: 97%}
+   #demo_intro table td {vertical-align: bottom; padding-bottom: 5px}
+   #h2heading {color:yellow; background-image: url(demo.gif); letter-spacing: 0.5em; 
+               font-family: Arial, Helvetica, sans-serif; width: 97%; 
+               font-size: 1.5em; margin: 0px; text-align: right; 
+               border: 1px solid black}
+
+   #para      {font-size: 1em; border: 1px solid black; width: 97%;
+               background-color: ivory}
+   #para p    {margin: 8px}
+
+   #demo_container {position: relative; top: 10px; left: 0px; width: 100%;
+                    margin: 0px 10px}
+   #demo_footer {text-align: center; font-size: 8pt; border-top: 1px solid black; 
+                 margin: 25px 10px; width: 97%; clear: left; position: relative;
+                 top: 10px; left: 0px}
+   span.btitle {font-style: italic}
+
+/* styles specific to this demo */
+   #demo_container table {float: left; width: 440px}
+   #styleoptions {font-family: Arial, Helvetica, sans-serif; font-size: 0.8em}
+
+   #fgred, #fgreda, #bgred, #bgreda {color: white; background-color: red; text-align: right}
+   #fggreen, #fggreena, #bggreen, #bggreena {color: white; background-color: green; text-align: right}
+   #fgblue, #fgbluea, #bgblue, #bgbluea {color: white; background-color: blue; text-align: right}
+   #fgrgba, #bgrgba, #fghsla, #bghsla {color: black; background-color: rgb(211,211,211); text-align: right;}
+
+   #fghue, #fgsat, #fglum, #fghuea, #fgsata, #fgluma {text-align: right;}
+   #bghue, #bgsat, #bglum, #bghuea, #bgsata, #bgluma {text-align: right;}
+
+   #output {width: 510px; float: left; margin-bottom: 10px}
+   #inputbox {width: 100%; height: 70px; margin-bottom: 10px; border: 1px solid black}
+   #textdecoration, #texttransform, #fontvariant, #fontstyle, #fontweight, #textalign, #fontfamily {width: 160px}
+   #preview {width: 100%; height: 250px; border: 1px solid black; font-family: serif; 
+             font-size: 1em; font-family: serif; overflow:scroll; padding: 5px}
+   #previewstyle {width: 100%; border: 1px solid black; font-family: monospace; padding: 5px; font-size: 0.9em}
+   #demo_container h4 {color: white; background-color: black; margin-top: 0px; margin-bottom: 0px; width: 100%; 
+                       border: 1px solid black; padding: 5px; font-family: Arial, Helvetica, sans-serif}
+</style>
+
+<script type="text/javascript">
+function replace(string,text,by) {
+    // Replaces text with by in string
+    var strLength = string.length, txtLength = text.length;
+    if ((strLength == 0) || (txtLength == 0)) return string;
+
+    var i = string.indexOf(text);
+    if ((!i) && (text != string.substring(0,txtLength))) return string;
+    if (i == -1) return string;
+
+    var newstr = string.substring(0,i) + by;
+
+    if (i+txtLength < strLength)
+        newstr += replace(string.substring(i+txtLength,strLength),text,by);
+
+    return newstr;
+}
+
+function setstyles() {
+   styletable=document.stylelist;
+   inputtext=styletable.inputbox.value;
+
+   previewobject=document.getElementById("preview");
+   previewobject.innerHTML=replace(inputtext,"\n","<br />");
+
+   styletext="";
+
+   ffi=styletable.fontfamily.selectedIndex;
+   fsi=styletable.fontstyle.selectedIndex;
+   fwi=styletable.fontweight.selectedIndex;
+   tai=styletable.textalign.selectedIndex;
+   fsu=styletable.sizeunit.selectedIndex;
+   lhu=styletable.lineunit.selectedIndex;
+   lsu=styletable.letterunit.selectedIndex;
+   wsu=styletable.wordunit.selectedIndex;
+   tiu=styletable.indentunit.selectedIndex;
+   tdi=styletable.textdecoration.selectedIndex;
+   tti=styletable.texttransform.selectedIndex;
+   fvi=styletable.fontvariant.selectedIndex;
+
+   fgchange = false;
+   fgr=styletable.fgred.value; fgg=styletable.fggreen.value; fgb=styletable.fgblue.value; 
+   if (fgr != "0" || fgg != "0" || fgb != "0") 
+      {styletext +="color: rgb("+fgr+","+fgg+","+fgb+"); ";
+       fgchange = true;
+       previewobject.style.color="rgb("+fgr+","+fgg+","+fgb+")";}
+
+   fgra=styletable.fgreda.value; fgga=styletable.fggreena.value; fgba=styletable.fgbluea.value;
+   fgoa=styletable.fgrgba.value;
+
+   if (fgra != "0" || fgga != "0" || fgba != "0" || fgoa != "1") 
+      {styletext +="color: rgba("+fgra+","+fgga+","+fgba+","+fgoa+"); ";
+       fgchange = true;
+       previewobject.style.color="rgba("+fgra+","+fgga+","+fgba+","+fgoa+")";}
+
+   fgh=styletable.fghue.value; fgs=styletable.fgsat.value; fgl=styletable.fglum.value;
+   if (fgh != "0" || fgs != "0%" || fgl != "0%") 
+      {styletext +="color: hsl("+fgh+","+fgs+","+fgl+"); ";
+       fgchange = true;
+       previewobject.style.color="hsl("+fgh+","+fgs+","+fgl+")";}
+
+   fgha=styletable.fghuea.value; fgsa=styletable.fgsata.value; fgla=styletable.fgluma.value;
+   fgoa=styletable.fghsla.value;
+   if (fgha != "0" || fgsa != "0%" || fgla != "0%" || fgoa != "1") 
+      {styletext +="color: hsla("+fgha+","+fgsa+","+fgla+","+fgoa+"); ";
+       fgchange = true;
+       previewobject.style.color="hsla("+fgha+","+fgsa+","+fgla+","+fgoa+")";}
+
+   if (fgchange != true) previewobject.style.color = "black";
+
+
+   bgchange = false;
+   bgr=styletable.bgred.value; bgg=styletable.bggreen.value; bgb=styletable.bgblue.value;
+   if (bgr != "255" || bgg != "255" || bgb != "255") 
+      {styletext +="background-color: rgb("+bgr+","+bgg+","+bgb+"); ";
+       bgchange = true;
+       previewobject.style.backgroundColor="rgb("+bgr+","+bgg+","+bgb+")";}
+
+   bgra=styletable.bgreda.value; bgga=styletable.bggreena.value; bgba=styletable.bgbluea.value;
+   bgoa=styletable.bgrgba.value;
+
+   if (bgra != "255" || bgga != "255" || bgba != "255" || bgoa != "1") 
+      {styletext +="background-color: rgba("+bgra+","+bgga+","+bgba+","+bgoa+"); ";
+       bgchange = true;
+       previewobject.style.backgroundColor="rgba("+bgra+","+bgga+","+bgba+","+bgoa+")";}
+
+   bgh=styletable.bghue.value; bgs=styletable.bgsat.value; bgl=styletable.bglum.value;
+   if (bgh != "0" || bgs != "0%" || bgl != "0%") 
+      {styletext +="background-color: hsl("+bgh+","+bgs+","+bgl+"); ";
+       bgchange = true;
+       previewobject.style.backgroundColor="hsl("+bgh+","+bgs+","+bgl+")";}
+
+   bgha=styletable.bghuea.value; bgsa=styletable.bgsata.value; bgla=styletable.bgluma.value;
+   bgoa=styletable.bghsla.value;
+   if (bgha != "0" || bgsa != "0%" || bgla != "0%" || bgoa != "1") 
+      {styletext +="background-color: hsla("+bgha+","+bgsa+","+bgla+","+bgoa+"); ";
+       bgchange = true;
+       previewobject.style.backgroundColor="hsla("+bgha+","+bgsa+","+bgla+","+bgoa+")";}
+   if (bgchange != true) previewobject.style.backgroundColor = "transparent";
+
+
+   fft=styletable.fontfamily.options[ffi].text;
+   if (fft != "default") {
+      styletext +="font-family: "+fft+"; ";
+      previewobject.style.fontFamily=fft;
+   } else {
+      previewobject.style.fontFamily="serif";
+   }
+
+   fst=styletable.fontstyle.options[fsi].text;
+   if (fst != "default") {
+      styletext +="font-style: "+fst+"; ";
+      previewobject.style.fontStyle=fst;
+   } else {
+      previewobject.style.fontStyle="normal";
+   }
+
+   fwt=styletable.fontweight.options[fwi].text;
+   if (fwt != "default") {
+      styletext +="font-weight: "+fwt+"; ";
+      previewobject.style.fontWeight=fwt;
+   } else {
+      previewobject.style.fontWeight="normal";
+   }
+
+   tat=styletable.textalign.options[tai].text;
+   if (tat != "default") {
+      styletext +="text-align: "+tat+"; ";
+      previewobject.style.textAlign=tat;
+   } else {
+      previewobject.style.textAlign="left";
+   }
+
+   fsv=styletable.fontsize.value;
+   fsut=styletable.sizeunit.options[fsu].text;
+   if (fsv !="default") {
+      if (fsut == "default") {
+         styletext +="font-size: "+fsv+"; ";
+         previewobject.style.fontSize=fsv;
+      } else if (fsv=="xx-small" || fsv=="x-small" || fsv=="small" || fsv=="medium" || fsv=="large" || fsv=="x-large" || fsv=="xx-large") {
+         styletext +="font-size: "+fsv+"; ";
+         previewobject.style.fontSize=fsv;
+      } else {
+         styletext +="font-size: "+fsv+fsut+"; ";
+         previewobject.style.fontSize=fsv+fsut;
+      }
+   } else {
+      previewobject.style.fontSize="1em";
+   }
+
+   lsv=styletable.letterspacing.value;
+   lsut=styletable.letterunit.options[lsu].text;
+   if (lsv !="default") {
+      if (lsut == "default") {
+         styletext +="letter-spacing: "+lsv+"; ";
+         previewobject.style.letterSpacing=lsv;
+      } else {
+         styletext +="letter-spacing: "+lsv+lsut+"; ";
+         previewobject.style.letterSpacing=lsv+lsut;
+      }
+   } else {
+      previewobject.style.letterSpacing="0";
+   }
+
+   wsv=styletable.wordspacing.value;
+   wsut=styletable.wordunit.options[wsu].text;
+   if (wsv !="default") {
+      if (wsut == "default") {
+         styletext +="word-spacing: "+wsv+"; ";
+         previewobject.style.wordSpacing=wsv;
+      } else {
+         styletext +="word-spacing: "+wsv+wsut+"; ";
+         previewobject.style.wordSpacing=wsv+wsut;
+      }
+   } else {
+      previewobject.style.wordSpacing="0";
+   }
+
+   lhv=styletable.lineheight.value;
+   lhut=styletable.lineunit.options[lhu].text;
+   if (lhv !="default") {
+      if (lhut == "default") {
+         styletext +="line-height: "+lhv+"; ";
+         previewobject.style.lineHeight=lhv;
+      } else {
+         styletext +="line-height: "+lhv+lhut+"; ";
+         previewobject.style.lineHeight=lhv+lhut;
+      }
+   } else {
+      previewobject.style.lineHeight="1.2";
+   }
+
+   tiv=styletable.textindent.value;
+   tiut=styletable.indentunit.options[tiu].text;
+   if (tiv !="default") {
+      if (tiut == "default") {
+         styletext +="text-indent: "+tiv+"; ";
+         previewobject.style.textIndent=tiv;
+      } else {
+         styletext +="text-indent: "+tiv+tiut+"; ";
+         previewobject.style.textIndent=tiv+tiut;
+      }
+   } else {
+         previewobject.style.textIndent="0";
+   }
+
+   tdit=styletable.textdecoration.options[tdi].text;
+   if (tdit != "default") {
+      styletext +="text-decoration: "+tdit+"; ";
+      previewobject.style.textDecoration=tdit;
+   } else {
+      previewobject.style.textDecoration="none";
+   }
+
+   ttit=styletable.texttransform.options[tti].text;
+   if (ttit != "default") {
+      styletext +="text-transform: "+ttit+"; ";
+      previewobject.style.textTransform=ttit;
+   } else {
+      previewobject.style.textTransform="none";
+   }
+
+   fvit=styletable.fontvariant.options[fvi].text;  
+   if (fvit != "default") {
+      styletext +="font-variant: "+fvit+"; ";
+      previewobject.style.fontVariant=fvit;
+   } else {
+      previewobject.style.fontVariant="normal";
+   }    
+
+   if (styletext=="") styletext="none";
+   document.getElementById("previewstyle").innerHTML=styletext; 
+}
+
+function resetstyles() {
+
+   styletable=document.stylelist;
+   styletable.fgred.value="0";styletable.fggreen.value="0";styletable.fgblue.value="0";
+   styletable.fgreda.value="0";styletable.fggreena.value="0";styletable.fgbluea.value="0";
+   styletable.fgrgba.value="1";
+
+   styletable.fghue.value="0";styletable.fgsat.value="0%";styletable.fglum.value="0%";
+   styletable.fghuea.value="0";styletable.fgsata.value="0%";styletable.fgluma.value="0%";
+   styletable.fghsla.value="1";
+
+   styletable.bgred.value="255";styletable.bggreen.value="255";styletable.bgblue.value="255";   
+   styletable.bgreda.value="255";styletable.bggreena.value="255";styletable.bgbluea.value="255"; 
+   styletable.bgrgba.value="1"; 
+
+   styletable.bghue.value="0";styletable.bgsat.value="0%";styletable.bglum.value="0%";
+   styletable.bghuea.value="0";styletable.bgsata.value="0%";styletable.bgluma.value="0%";
+   styletable.bghsla.value="1";
+
+   styletable.fontfamily.selectedIndex=0;
+   styletable.fontstyle.selectedIndex=0;
+   styletable.fontweight.selectedIndex=0;
+   styletable.textalign.selectedIndex=0;
+   styletable.fontsize.value="default"; styletable.sizeunit.selectedIndex=0;
+   styletable.letterspacing.value="default"; styletable.letterunit.selectedIndex=0;
+   styletable.wordspacing.value="default"; styletable.wordunit.selectedIndex=0;
+   styletable.lineheight.value="default"; styletable.lineunit.selectedIndex=0;
+   styletable.textindent.value="default"; styletable.indentunit.selectedIndex=0;
+   styletable.textdecoration.selectedIndex=0;
+   styletable.texttransform.selectedIndex=0;
+   styletable.fontvariant.selectedIndex=0;
+
+   previewobject=document.getElementById("preview");
+   previewobject.style.color = "black";
+   previewobject.style.backgroundColor = "transparent";
+
+   setstyles();
+}
+</script>
+
+
+</head>
+
+<body>
+<form id="stylelist" name="stylelist">
+<div id="demo_page">
+
+<div id="demo_intro">
+   <table>
+   <tr><td style="width: 50%"><img src="cengage.jpg" alt="Course Technology Cengage Learning" /></td>
+       <td style="width: 50%; text-align:right; font-family: Arial, Helvetica, sans-serif; font-size: 14pt">
+          New Perspectives on HTML and CSS<br />Tutorial 3
+   </td></tr>
+   </table>
+
+   <h2 id="h2heading">CSS Styles </h2>
+   <div id="para">
+      <p>This page demonstrates how different styles affect the appearance of Web page text. Enter
+         your sample text in the box in the upper-right corner of this page. When you press the <b>Tab</b>
+         key, the text will be copied to the Preview box. Set the styles for the preview text by entering
+         or selecting the style value from the input boxes on the left and then pressing the <b>Tab</b>
+         key. To apply the default style values, enter or select <i>default</i>. The style selections will be 
+         applied automatically to the preview text and the style code will be displayed in the box on the
+         lower-right of the page. <br /><br />To reset all of the styles to their default values, click the 
+         <b>Reset Styles</b> button at the bottom of the page.</p>
+      <p>Note that depending on your browser and browser version, you might not be able to apply 
+         text and background colors using the rgba, hsl, or hsla color value models.</p>
+   </div>
+</div>
+
+<div id="demo_container">
+
+   <table id="styleoptions">
+   <tr>
+      <td>color (rgb)</td>
+      <td>( <input type="text" name="fgred" id="fgred" size="3" value="0" onblur="setstyles()" /> , 
+            <input type="text" name="fggreen" id="fggreen" size="3" value="0" onblur="setstyles()" /> , 
+            <input type="text" name="fgblue" id="fgblue" size="3" value="0" onblur="setstyles()" /> )
+      </td>
+   </tr>
+   <tr>
+      <td>color (rgba)</td>
+      <td>( <input type="text" name="fgreda" id="fgreda" size="3" value="0" onblur="setstyles()" /> , 
+            <input type="text" name="fggreena" id="fggreena" size="3" value="0" onblur="setstyles()" /> , 
+            <input type="text" name="fgbluea" id="fgbluea" size="3" value="0" onblur="setstyles()" /> ,
+            <input type="text" name="fgrgba" id="fgrgba" size="3" value="1" onblur="setstyles()" /> )
+      </td>
+   </tr>
+   <tr>
+      <td>color (hsl)</td>
+      <td>( <input type="text" name="fghue" id="fghue" size="3" value="0" onblur="setstyles()" /> , 
+            <input type="text" name="fgsat" id="fgsat" size="3" value="0%" onblur="setstyles()" /> , 
+            <input type="text" name="fglum" id="fglum" size="3" value="0%" onblur="setstyles()" /> )
+      </td>
+   </tr>
+   <tr>
+      <td>color (hsla)</td>
+      <td>( <input type="text" name="fghuea" id="fghuea" size="3" value="0" onblur="setstyles()" /> , 
+            <input type="text" name="fgsata" id="fgsata" size="3" value="0%" onblur="setstyles()" /> , 
+            <input type="text" name="fgluma" id="fgluma" size="3" value="0%" onblur="setstyles()" /> ,
+            <input type="text" name="fghsla" id="fghsla" size="3" value="1" onblur="setstyles()" /> )
+      </td>
+   </tr>
+   <tr>
+      <td>background-color (rgb)</td>
+      <td>( <input type="text" name="bgred" id="bgred" size="3" value="255" onblur="setstyles()" /> , 
+            <input type="text" name="bggreen" id="bggreen" size="3" value="255" onblur="setstyles()" /> , 
+            <input type="text" name="bgblue" id="bgblue" size="3" value="255" onblur="setstyles()" /> )
+      </td>
+   </tr>
+   <tr>
+      <td>background-color (rgba)</td>
+      <td>( <input type="text" name="bgreda" id="bgreda" size="3" value="255" onblur="setstyles()" /> , 
+            <input type="text" name="bggreena" id="bggreena" size="3" value="255" onblur="setstyles()" /> , 
+            <input type="text" name="bgbluea" id="bgbluea" size="3" value="255" onblur="setstyles()" /> ,
+            <input type="text" name="bgrgba" id="bgrgba" size="3" value="1" onblur="setstyles()" /> )
+      </td>
+   </tr>
+   <tr>
+      <td>background-color (hsl)</td>
+      <td>( <input type="text" name="bghue" id="bghue" size="3" value="0" onblur="setstyles()" /> , 
+            <input type="text" name="bgsat" id="bgsat" size="3" value="0%" onblur="setstyles()" /> , 
+            <input type="text" name="bglum" id="bglum" size="3" value="0%" onblur="setstyles()" /> )
+      </td>
+   </tr>
+   <tr>
+      <td>background-color (hsla)</td>
+      <td>( <input type="text" name="bghuea" id="bghuea" size="3" value="0" onblur="setstyles()" /> , 
+            <input type="text" name="bgsata" id="bgsata" size="3" value="0%" onblur="setstyles()" /> , 
+            <input type="text" name="bgluma" id="bgluma" size="3" value="0%" onblur="setstyles()" /> ,
+            <input type="text" name="bghsla" id="bghsla" size="3" value="1" onblur="setstyles()" /> )
+      </td>
+   </tr>
+   <tr>
+      <td>font-family</td>
+      <td><select name="fontfamily" id="fontfamily" onchange="setstyles()">
+             <option>default</option>
+             <option>serif</option>
+             <option>sans-serif</option>
+             <option>monospace</option>
+             <option>cursive</option>
+             <option>fantasy</option>
+             <option>Arial</option>
+             <option>'Arial Black'</option>
+             <option>'Book Antiqua'</option>
+             <option>'Century Gothic'</option>
+             <option>Charcoal</option>
+             <option>'Comic Sans MS'</option>
+             <option>'Courier New'</option>
+             <option>Courier</option>
+             <option>Gadget</option>
+             <option>Geneva</option>
+             <option>Georgia</option>
+             <option>Helvetica</option>
+             <option>Impact</option>
+             <option>'Lucida Console'</option>
+             <option>'Lucida Grande'</option>
+             <option>'Lucida Sans Unicode'</option>
+             <option>Monaco</option>
+             <option>Palatino</option>
+             <option>'Palatino Linotype'</option>
+             <option>Tahoma</option>
+             <option>'Times New Roman'</option>
+             <option>Times</option>
+             <option>'Trebuchet MS'</option>
+          </select>
+      </td>
+   </tr>
+   <tr>
+      <td>font-style</td>
+      <td><select name="fontstyle" id="fontstyle" onchange="setstyles()">
+             <option>default</option>
+             <option>italic</option>
+             <option>oblique</option>
+             <option>normal</option>
+         </select>
+      </td>
+   </tr>
+   <tr>
+      <td>font-weight</td>
+      <td><select name="fontweight" id="fontweight" onchange="setstyles()">
+             <option>default</option>
+             <option>bold</option>
+             <option>bolder</option>
+             <option>lighter</option>
+             <option>100</option>
+             <option>200</option>
+             <option>300</option>
+             <option>400</option>
+             <option>500</option>
+             <option>600</option>
+             <option>700</option>
+             <option>800</option>
+             <option>900</option>
+             <option>normal</option>
+         </select>
+      </td>
+   </tr>
+   <tr>
+      <td>text-align</td>
+      <td><select name="textalign" id="textalign" onchange="setstyles()">
+             <option>default</option>
+             <option>left</option>
+             <option>center</option>
+             <option>right</option>
+             <option>justify</option>
+          </select>
+      </td>
+   </tr>
+   <tr>
+      <td>font-size</td>
+      <td><input type="text" name="fontsize" id="fontsize" size="10" value="default" onblur="setstyles()"/>
+          unit
+          <select name="sizeunit" id="sizeunit" onchange="setstyles()">
+             <option>default</option>
+             <option>cm</option>
+             <option>em</option>
+             <option>ex</option>
+             <option>in</option>
+             <option>mm</option>
+             <option>pt</option>
+             <option>px</option>
+             <option>pc</option>
+             <option>%</option>
+          </select>
+      </td>
+   </tr>
+   <tr>
+      <td>letter-spacing</td>
+       <td><input type="text" name="letterspacing" id="letterspacing" size="10" value="default" onblur="setstyles()"/>
+            unit
+           <select name="letterunit" id="letterunit" onchange="setstyles()">
+              <option>default</option>
+              <option>cm</option>
+              <option>em</option>
+              <option>ex</option>
+              <option>in</option>
+              <option>mm</option>
+              <option>pt</option>
+              <option>px</option>
+              <option>pc</option>
+              <option>%</option>
+          </select>
+      </td>
+   </tr>
+   <tr>
+      <td>word-spacing</td>
+      <td><input type="text" name="wordspacing" id="wordspacing" size="10" value="default" onblur="setstyles()"/>
+           unit
+          <select name="wordunit" id="wordunit" onchange="setstyles()">
+             <option>default</option>
+             <option>cm</option>
+             <option>em</option>
+             <option>ex</option>
+             <option>in</option>
+             <option>mm</option>
+             <option>pt</option>
+             <option>px</option>
+             <option>pc</option>
+             <option>%</option>
+          </select>
+      </td>
+   </tr>
+   <tr>
+      <td>line-height</td>
+      <td><input type="text" name="lineheight" id="lineheight" size="10" value="default" onblur="setstyles()"/>
+            unit
+            <select name="lineunit" id="lineunit" onchange="setstyles()">
+               <option>default</option>
+               <option>cm</option>
+               <option>em</option>
+               <option>ex</option>
+               <option>in</option>
+               <option>mm</option>
+               <option>pt</option>
+               <option>px</option>
+               <option>pc</option>
+               <option>%</option>
+            </select>
+      </td>
+   </tr>
+   <tr>
+      <td>text-indent</td>
+      <td><input type="text" name="textindent" id="textindent" size="10" value="default" onblur="setstyles()"/>
+           unit
+           <select name="indentunit" id="indentunit" onchange="setstyles()">
+              <option>default</option>
+              <option>cm</option>
+              <option>em</option>
+              <option>ex</option>
+              <option>in</option>
+              <option>mm</option>
+              <option>pt</option>
+              <option>px</option>
+              <option>pc</option>
+              <option>%</option>
+           </select>
+      </td>
+   </tr>
+   <tr>
+      <td>text-decoration</td>
+      <td><select name="textdecoration" id="textdecoration" onchange="setstyles()">
+             <option>default</option>
+             <option>blink</option>
+             <option>line-through</option>
+             <option>overline</option>
+             <option>underline</option>
+             <option>none</option>
+          </select>
+      </td>
+   </tr>
+   <tr>
+      <td>text-transform</td>
+      <td><select name="texttransform" id="texttransform" onchange="setstyles()">
+             <option>default</option>
+             <option>capitalize</option>
+             <option>lowercase</option>
+             <option>uppercase</option>
+             <option>none</option>
+           </select>
+      </td>
+   </tr>
+   <tr>
+      <td>font-variant</td>
+      <td><select name="fontvariant" id="fontvariant" onchange="setstyles()">
+             <option>default</option>
+             <option>small-caps </option>
+             <option>none</option>
+          </select>
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2">
+         <input type="button" value="Reset Styles" onclick="resetstyles()" />
+      </td>
+   </table>
+
+   <div id="output">
+
+      <textarea name="inputbox" id="inputbox" onblur="setstyles()" tabindex="1" wrap="hard">Enter sample text here</textarea>
+      <h4>Preview</h4>
+
+      <div id="preview">
+         &nbsp;
+      </div>
+
+      <h4>Style</h4>
+  
+      <div id="previewstyle">
+         none
+      </div>
+
+   </div>
+</div>
+
+<div id="demo_footer">
+   Carey, P.
+   <span class="btitle">New Perspectives on HTML and CSS</span>,
+   Course Technology: Boston, 2012.
+</div>
+
+</div>
+</form>
+
+</body>
+</html>
+
+

@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<!--
+    Author:  Anthony Rivera
+    Date:    03/31/2017
+-->
+
+<html>
+
+<head>
+    <title>Real Estate Property Listing</title>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.2.0.min"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="js/myscripts.js"></script>
+
+    <style type="text/css" media="screen">
+        #background {
+            background-image: url(pic/TSBack.gif);
+        }
+
+        table {
+            font-family: 'Open Sans', sans-serif;
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+        td, th {
+            border: 0;
+            text-align: left;
+            padding: 8px;
+        }
+
+        footer {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            color: #663300;
+        }
+
+        img {
+            position: relative;
+            margin: auto;
+        }
+
+        #gmap_canvas {
+            margin-left: 40px;
+            margin-top: 50px;
+        }
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1em;
+        }
+
+        .fa {
+            width: 20px !important;
+            height: 20px !important;
+            color: black;
+        }
+        ul.icons {
+            cursor: default;
+            list-style: none;
+            padding-left: 0px;
+            margin: auto;
+
+        }
+
+        ul.icons li {
+                    display: inline-block;
+                    padding: 0 1em 0 0;
+                }
+
+        ul.icons li:last-child {
+                        padding-right: 0;
+                }
+
+        ul.icons li .icon:before {
+                        font-size: 2em;
+                }
+        div {
+                    position: relative;
+                }
+
+        .shakeimage {
+                position:relative
+                }        
+    </style>
+
+</head>
+<body id="background">
+
+    <div>
+        </script>
+    	<header>
+            <img src="pic/Tristate.gif" width="225" height="100">
+    	</header>
+
+        	<nav>
+        		<img src="pic/listings.gif" width="600" height="100" alt="Listings" usemap="#damap">
+
+                    <map name="damap">
+                      <area shape="rect" coords="5,3,182,44" href="Newhome.htm" alt="New Home">
+                      <area shape="rect" coords="12,62,303,95" href="Mansions.htm" alt="Mansions">
+                      <area shape="rect" coords="210,19,374,60" href="Business.htm" alt="Business">
+                      <area shape="rect" coords="375,1,598,44" href="Family.htm" alt="Family">
+                      <area shape="rect" coords="378,61,549,96" href="Business.htm" alt="Apartment">
+                    </map>
+        	</nav>
+
+    	<table>
+            <tr>
+                <th><h2>22 Northshore Drive</h2></th>
+                <th><h2>Search. See. Love.</h2></th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                      <li>Large waterfront home overlooking Mills Lake.</li>
+                      <li>It comes complete with three bedrooms, a huge master bedroom, hot tub, family room, large office or den, three-car garage.</li>
+                      <li>Wood boat ramp</li>
+                      <li>Great condition!</li>
+                    </ul>
+                </td>
+                <td>
+                    <center><img src="pic/house.jpg" width="243" height="163" alt="House" class="shakeimage" onMouseover="init(this);rattleimage()" onMouseout="stoprattle(this);top.focus()" onClick="top.focus()">
+                    </center>    
+                </td>
+   
+            </tr>
+            <tr>
+
+                <td class="map">
+                    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+                        <div style='overflow:hidden;height:400px;width:300px;'>
+                        <div id='gmap_canvas' style='height:250px;width:200px;'>
+                        </div>
+                            <style>#gmap_canvas img{max-width:none!important;background:none!important}
+                            </style>
+                        </div>
+                    <script type='text/javascript'>function init_map(){var myOptions = {zoom:13,center:new google.maps.LatLng(40.79288701119321,-124.14204825003044),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.79288701119321,-124.14204825003044)});infowindow = new google.maps.InfoWindow({content:'<strong>Paradise</strong><br>22 Northshore Drive Eureka, CA<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+                    </script>
+                </td>
+
+                <td>
+                    <ul>
+                      <li>2900 sg. feet</li>
+                      <li>15 years old</li>
+                      <li>Updated electrical, plumbing, and heating systems</li>
+                      <li>Central air conditioning</li>
+                      <li>near school, park, and shopping center</li>
+                      <li>nice, quiet neighborhood</li>
+                      <li>Asking price: <strong>$280,000</strong></li>
+                    </ul>
+                    <p>
+                        Meticulously restored 15-year old modern contemporary home.  Apart from basics, solar panels installed, boasting iconic view of the lake and the pacific ocean, gated entry, manicured gardens, and heated pool.
+                    </p>
+                </td>
+
+            </tr>    
+                          
+
+    	</table>
+            <center>
+                    <ul class="icons">
+                        <li><a href="#" class="icon round fa-twitter"><img title="Twitter" alt="Twitter" src="http://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Twitter-icon.png" width="40px" heigh="40px"></a></li>
+                        <li><a href="#" class="icon round fa-facebook"><img title="Twitter" alt="Twitter" src="https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/facebook-256.png" width="38px" heigh="38px"></a></li>
+                        <li><a href="#" class="icon round fa-instagram"><img title="Twitter" alt="Twitter" src="pic/instagram.ico" width="38px" heigh="38px"></a></li>
+                    </ul>
+            </center>
+    </div>    
+    	<footer>Copyright &copy; Anthony Rivera</footer>
+
+
+</body>
+
+</html>

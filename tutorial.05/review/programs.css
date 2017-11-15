@@ -1,0 +1,83 @@
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 5
+   Review Assignment
+
+   Programming Table Style Sheet
+      Author:  Anthony Rivera
+      Date:    03/27/2017 
+
+   Filename:         programs.css
+   Supporting Files: 
+
+*/
+/* Styles for the intro table */
+table.programs {
+	border: 10px outset rgb(153, 0, 153);
+	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.7em;
+	width: 100%;
+}
+table.programs th, table.programs td {
+	border: 2px solid black;
+	font-family: Arial, Verdana, sans-serif;
+}
+
+/* Table header styles */
+table.programs thead {
+	background-color: rgb(105,177,60);
+	color: white;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+table.programs thead tr {
+	height: 25px;
+}
+/* Table body styles */
+table.programs tbody tr {
+	height: 25px;
+}
+
+table.programs tbody td {
+	padding: 5px;
+	vertical-align: top;
+}
+
+/* Styles for the first column */
+table.programs col.timeColumn {
+	background-color: rgb(105,177,60);
+	width: 7%;
+	
+}
+
+table.programs col.wDayColumns {
+	background-color: rgb(153,0,153);
+	width: 7%;
+}
+
+/* Styles for the remaining columns */
+	table.programs col.wEndColumns {
+	background-color: rgb(153,0,153);
+	width: 7%;
+}
+p {
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;
+
+	-moz-column-gap: 20px;
+	-webkit-column-gap: 20px;
+	column-gap: 20px;
+
+	-moz-column-rule: 2px solid rgb(153, 0, 153);
+	-webkit-column-rule: 2px solid rgb(153, 0, 153);
+	column-rule: 2px solid rgb(153, 0, 153);
+}
+
+/* Styles for the table caption */
+table.programs caption {
+	caption-side: bottom;
+	text-align: left;
+	font-size: 0.8em;
+

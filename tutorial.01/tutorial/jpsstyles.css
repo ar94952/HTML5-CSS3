@@ -1,0 +1,122 @@
+﻿/*
+   New Perspectives on HTML
+   Tutorial 1
+   Tutorial Case
+
+   J-Prop Shop Style Sheet
+   Author: David Vinet
+   Date:   3/1/2014
+
+   Filename:         jpsstyles.css
+   Supporting Files: none
+
+*/
+
+/* Section Styles */
+
+body {
+margin: 0px auto;
+padding: 0px;
+line-height: 1.5em;
+width: 98%;
+max-width: 980px;
+min-width: 250px;
+font-family: Verdana, Geneva, sans-serif
+}
+
+header {
+width: 100%;
+text-align: center;
+}
+
+section {
+width: 66%;
+float: left;
+}
+
+aside {
+width: 32%;
+margin-top: 2em;
+float: left;
+border: 3px solid black;
+background-color: rgb(255, 177, 255);
+-moz-border-radius: 35px;
+ border-radius: 35px;
+box-shadow:10px 10px 20px #000;
+-webkit-box-shadow:10px 10px 20px #000;
+-moz-box-shadow: 10px 10px 20px #000;
+}
+
+footer {
+clear: left;
+width: 100%;
+text-align: center;
+margin-top: 5px;
+}
+
+footer address {
+width: 100%;
+clear: left;
+font-size: 0.8em;
+font-style: normal;
+font-variant: small-caps;
+border-top: 1px solid black;
+background-color: rgb(255, 177, 255);
+}
+
+/* Block Styles */
+h1, h2, h3, h4, h5, h6 {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+header h1 {
+margin: 1em 0em;
+font-size: 2em;
+}
+
+h2 {
+margin: 1em 0em;
+font-size: 1.5em;
+}
+
+header h1 {
+margin: 0px;
+}
+
+header h2 {
+font-size: 1.2em;
+font-style: italic;
+margin: 0em;
+padding-bottom: 0.5em;
+border-bottom:1px black solid;
+}
+
+article p {
+margin: 0.2em 0.9em 0.7em 0em;
+}
+
+article ul {
+margin: 0.1em 0.8em 0.5em;
+}
+
+article ul li {
+margin-right: 0.5em;
+}
+
+aside h2 {
+text-align: center;
+}
+
+aside p {
+font-size: 0.8em;
+margin: 0px 0.7em;
+}
+
+aside blockquote {
+margin: 1.2em 2em 0em 2em;
+}
+
+aside blockquote p {
+margin: 0em 0em 2em;
+font-size: 0.7em;
+}

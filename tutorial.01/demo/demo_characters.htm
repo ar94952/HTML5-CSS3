@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 
+   New Perspectives on HTML and CSS
+   Tutorial 1
+   Tutorial Case
+
+   Character Reference Demo
+   Author: Patrick Carey
+   Date:   3/1/2014
+
+   Filename:         demo_characters.htm
+   Supporting files: demo.gif
+-->
+
+<title>HTML Character Codes Demo</title>
+
+<script src="modernizr-1.5.js"></script>
+<script type="text/javascript">
+var generalNames=new Array();	var generalNum=new Array();
+generalNames[0]='quot'; 	generalNum[0]=34;
+generalNames[1]='amp';  	generalNum[1]=38;
+generalNames[2]='lt';   	generalNum[2]=60;
+generalNames[3]='gt';   	generalNum[3]=62;
+generalNames[4]='nbsp'; 	generalNum[4]=160;
+generalNames[5]='iexcl';	generalNum[5]=161;
+generalNames[6]='cent'; 	generalNum[6]=162;
+generalNames[7]='pound';	generalNum[7]=163;
+generalNames[8]='curren';	generalNum[8]=164;
+generalNames[9]='yen';  	generalNum[9]=165;
+generalNames[10]='brvbar';	generalNum[10]=166;
+generalNames[11]='sect';	generalNum[11]=167;
+generalNames[12]='uml'; 	generalNum[12]=168;
+generalNames[13]='copy';	generalNum[13]=169;
+generalNames[14]='ordf';	generalNum[14]=170;
+generalNames[15]='laquo';	generalNum[15]=171;
+generalNames[16]='not'; 	generalNum[16]=172;
+generalNames[17]='shy'; 	generalNum[17]=173;
+generalNames[18]='reg'; 	generalNum[18]=174;
+generalNames[19]='macr';	generalNum[19]=175;
+generalNames[20]='deg'; 	generalNum[20]=176;
+generalNames[21]='plusmn';	generalNum[21]=177;
+generalNames[22]='sup2';	generalNum[22]=178;
+generalNames[23]='sup3';	generalNum[23]=179;
+generalNames[24]='acute';	generalNum[24]=180;
+generalNames[25]='micro';	generalNum[25]=181;
+generalNames[26]='para';	generalNum[26]=182;
+generalNames[27]='middot';	generalNum[27]=183;
+generalNames[28]='cedil';	generalNum[28]=184;
+generalNames[29]='sup1';	generalNum[29]=185;
+generalNames[30]='ordm';	generalNum[30]=186;
+generalNames[31]='raquo';	generalNum[31]=187;
+generalNames[32]='frac14';	generalNum[32]=188;
+generalNames[33]='frac12';	generalNum[33]=189;
+generalNames[34]='frac34';	generalNum[34]=190;
+
+var intlNames=new Array();	var intlNum=new Array();
+intlNames[0]='iquest';  	intlNum[0]=191;
+intlNames[1]='Agrave';  	intlNum[1]=192;
+intlNames[2]='Aacute';  	intlNum[2]=193;
+intlNames[3]='Acirc';   	intlNum[3]=194;
+intlNames[4]='Atilde';  	intlNum[4]=195;
+intlNames[5]='Auml';    	intlNum[5]=196;
+intlNames[6]='Aring';   	intlNum[6]=197;
+intlNames[7]='AElig';   	intlNum[7]=198;
+intlNames[8]='Ccedil';   	intlNum[8]=199;
+intlNames[9]='Egrave';  	intlNum[9]=200;
+intlNames[10]='Eacute'; 	intlNum[10]=201;
+intlNames[11]='Ecirc';  	intlNum[11]=202;
+intlNames[12]='Euml';   	intlNum[12]=203;
+intlNames[13]='Igrave'; 	intlNum[13]=204;
+intlNames[14]='Iacute'; 	intlNum[14]=205;
+intlNames[15]='Icirc';  	intlNum[15]=206;
+intlNames[16]='Iuml';   	intlNum[16]=207;
+intlNames[17]='ETH';    	intlNum[17]=208;
+intlNames[18]='Ntilde'; 	intlNum[18]=209;
+intlNames[19]='Ograve'; 	intlNum[19]=210;
+intlNames[20]='Oacute'; 	intlNum[20]=211;
+intlNames[21]='Ocirc';  	intlNum[21]=212;
+intlNames[22]='Otilde'; 	intlNum[22]=213;
+intlNames[23]='Ouml';   	intlNum[23]=214;
+intlNames[24]='times';  	intlNum[24]=215;
+intlNames[25]='Oslash'; 	intlNum[25]=216;
+intlNames[26]='Ugrave'; 	intlNum[26]=217;
+intlNames[27]='Uacute'; 	intlNum[27]=218;
+intlNames[28]='Ucirc';  	intlNum[28]=219;
+intlNames[29]='Uuml';   	intlNum[29]=220;
+intlNames[30]='Yacute'; 	intlNum[30]=221;
+intlNames[31]='THORN';  	intlNum[31]=222;
+intlNames[32]='szlig';  	intlNum[32]=223;
+intlNames[33]='agrave'; 	intlNum[33]=224;
+intlNames[34]='aacute'; 	intlNum[34]=225;
+intlNames[35]='acirc';  	intlNum[35]=226;
+intlNames[36]='atilde'; 	intlNum[36]=227;
+intlNames[37]='auml';   	intlNum[37]=228;
+intlNames[38]='aring';  	intlNum[38]=229;
+intlNames[39]='aelig';  	intlNum[39]=230;
+intlNames[40]='ccedil'; 	intlNum[40]=231;
+intlNames[41]='egrave';  	intlNum[41]=232;
+intlNames[42]='eacute'; 	intlNum[42]=233;
+intlNames[43]='ecirc';  	intlNum[43]=234;
+intlNames[44]='euml';   	intlNum[44]=235;
+intlNames[45]='igrave'; 	intlNum[45]=236;
+intlNames[46]='iacute'; 	intlNum[46]=237;
+intlNames[47]='icirc';  	intlNum[47]=238;
+intlNames[48]='iuml';   	intlNum[48]=239;
+intlNames[49]='eth';    	intlNum[49]=240;
+intlNames[50]='ntilde'; 	intlNum[50]=241;
+intlNames[51]='ograve'; 	intlNum[51]=242;
+intlNames[52]='oacute'; 	intlNum[52]=243;
+intlNames[53]='ocirc';  	intlNum[53]=244;
+intlNames[54]='otilde'; 	intlNum[54]=245;
+intlNames[55]='ouml';   	intlNum[55]=246;
+intlNames[56]='divide'; 	intlNum[56]=247;
+intlNames[57]='oslash'; 	intlNum[57]=248;
+intlNames[58]='ugrave'; 	intlNum[58]=249;
+intlNames[59]='uacute'; 	intlNum[59]=250;
+intlNames[60]='ucirc';  	intlNum[60]=251;
+intlNames[61]='uuml';   	intlNum[61]=252;
+intlNames[62]='yacute'; 	intlNum[62]=253;
+intlNames[63]='thorn';  	intlNum[63]=254;
+intlNames[64]='yuml';   	intlNum[64]=255;
+intlNames[65]='OElig';  	intlNum[65]=338;
+intlNames[66]='oelig';  	intlNum[66]=339;
+intlNames[67]='Scaron';  	intlNum[67]=352;
+intlNames[68]='scaron';  	intlNum[68]=353;
+intlNames[69]='Yuml';   	intlNum[69]=376;
+intlNames[70]='euro';    	intlNum[70]=8364;
+
+var greekNames=new Array();	var greekNum =  new Array();
+greekNames[0]='Alpha';  	greekNum[0]=913;
+greekNames[1]='Beta';   	greekNum[1]=914;
+greekNames[2]='Gamma';  	greekNum[2]=915;
+greekNames[3]='Delta';  	greekNum[3]=916;
+greekNames[4]='Epsilon';	greekNum[4]=917;
+greekNames[5]='Zeta';   	greekNum[5]=918;
+greekNames[6]='Eta';    	greekNum[6]=919;
+greekNames[7]='Theta';   	greekNum[7]=920;
+greekNames[8]='Iota';   	greekNum[8]=921;
+greekNames[9]='Kappa';  	greekNum[9]=922;
+greekNames[10]='Lambda';	greekNum[10]=923;
+greekNames[11]='Mu';    	greekNum[11]=924;
+greekNames[12]='Nu';    	greekNum[12]=925;
+greekNames[13]='Xi';    	greekNum[13]=926;
+greekNames[14]='Omicron';	greekNum[14]=927;
+greekNames[15]='Pi';    	greekNum[15]=928;
+greekNames[16]='Rho';   	greekNum[16]=929;
+greekNames[17]='Sigma'; 	greekNum[17]=931;
+greekNames[18]='Tau';   	greekNum[18]=932;
+greekNames[19]='Upsilon';	greekNum[19]=933;
+greekNames[20]='Phi';   	greekNum[20]=934;
+greekNames[21]='Chi';   	greekNum[21]=935;
+greekNames[22]='Psi';   	greekNum[22]=936;
+greekNames[23]='Omega'; 	greekNum[23]=937;
+greekNames[24]='alpha'; 	greekNum[24]=945;
+greekNames[25]='beta';  	greekNum[25]=946;
+greekNames[26]='gamma'; 	greekNum[26]=947;
+greekNames[27]='delta'; 	greekNum[27]=948;
+greekNames[28]='epsilon';	greekNum[28]=949;
+greekNames[29]='zeta';  	greekNum[29]=950;
+greekNames[30]='eta';   	greekNum[30]=951;
+greekNames[31]='theta';  	greekNum[31]=952;
+greekNames[32]='iota';  	greekNum[32]=953;
+greekNames[33]='kappa'; 	greekNum[33]=954;
+greekNames[34]='lambda';	greekNum[34]=955;
+greekNames[35]='mu';    	greekNum[35]=956;
+greekNames[36]='nu';    	greekNum[36]=957;
+greekNames[37]='xi';    	greekNum[37]=958;
+greekNames[38]='omicron';	greekNum[38]=959;
+greekNames[39]='pi';    	greekNum[39]=960;
+greekNames[40]='rho';   	greekNum[40]=961;
+greekNames[41]='sigmaf';	greekNum[41]=962;
+greekNames[42]='sigma'; 	greekNum[42]=963;
+greekNames[43]='tau';   	greekNum[43]=964;
+greekNames[44]='upsilon';	greekNum[44]=965;
+greekNames[45]='phi';   	greekNum[45]=966;
+greekNames[46]='chi';   	greekNum[46]=967;
+greekNames[47]='psi';   	greekNum[47]=968;
+greekNames[48]='omega';  	greekNum[48]=969;
+greekNames[49]='thetasym';	greekNum[49]=977;
+greekNames[50]='upsih'; 	greekNum[50]=978;
+greekNames[51]='piv';   	greekNum[51]=982;
+	
+var puncNames=new Array();	var puncNum=new Array();
+puncNames[0]='circ';    	puncNum[0]=710;
+puncNames[1]='ndash';   	puncNum[1]=8211;
+puncNames[2]='mdash';   	puncNum[2]=8212;
+puncNames[3]='lsquo';   	puncNum[3]=8216;
+puncNames[4]='rsquo';   	puncNum[4]=8217;
+puncNames[5]='sbquo';   	puncNum[5]=8218;
+puncNames[6]='ldquo';   	puncNum[6]=8220;
+puncNames[7]='rdquo';   	puncNum[7]=8221;
+puncNames[8]='bdquo';   	puncNum[8]=8222;
+puncNames[9]='dagger';  	puncNum[9]=8224;
+puncNames[10]='Dagger'; 	puncNum[10]=8225;
+puncNames[11]='bull';   	puncNum[11]=8226;
+puncNames[12]='hellip'; 	puncNum[12]=8230;
+puncNames[13]='permil'; 	puncNum[13]=8240;
+puncNames[14]='prime';  	puncNum[14]=8242;
+puncNames[15]='Prime';  	puncNum[15]=8243;
+puncNames[16]='lsaquo'; 	puncNum[16]=8249;
+puncNames[17]='rsaquo';   	puncNum[17]=8250;	
+puncNames[18]='oline';  	puncNum[18]=8254;
+puncNames[19]='frasl';  	puncNum[19]=8260;
+puncNames[20]='image';  	puncNum[20]=8465;
+puncNames[21]='weierp'; 	puncNum[21]=8472;
+puncNames[22]='real';   	puncNum[22]=8476;
+puncNames[23]='trade';  	puncNum[23]=8482;
+puncNames[24]='alefsym';	puncNum[24]=8501;
+
+var arrowNames=new Array();	var arrowNum=new Array();
+arrowNames[0]='larr';		arrowNum[0]=8592;
+arrowNames[1]='uarr';		arrowNum[1]=8593;
+arrowNames[2]='rarr';		arrowNum[2]=8594;
+arrowNames[3]='darr';		arrowNum[3]=8595;
+arrowNames[4]='harr';		arrowNum[4]=8596;
+arrowNames[5]='crarr';		arrowNum[5]=8629;
+arrowNames[6]='lArr';		arrowNum[6]=8656;
+arrowNames[7]='uArr';		arrowNum[7]=8657;
+arrowNames[8]='rArr';		arrowNum[8]=8658;
+arrowNames[9]='dArr';		arrowNum[9]=8659;
+arrowNames[10]='hArr';		arrowNum[10]=8660;
+
+var mathNames=new Array();	var mathNum=new Array();
+mathNames[0]='fnof';    	mathNum[0]=402;
+mathNames[1]='forall';  	mathNum[1]=8704;
+mathNames[2]='part';    	mathNum[2]=8706;
+mathNames[3]='exist';   	mathNum[3]=8707;
+mathNames[4]='empty';   	mathNum[4]=8709;
+mathNames[5]='nabla';   	mathNum[5]=8711;
+mathNames[6]='isin';    	mathNum[6]=8712;
+mathNames[7]='notin';   	mathNum[7]=8713;
+mathNames[8]='ni';      	mathNum[8]=8715;
+mathNames[9]='prod';    	mathNum[9]=8719;
+mathNames[10]='sum';     	mathNum[10]=8721;
+mathNames[11]='minus';  	mathNum[11]=8722;
+mathNames[12]='lowast'; 	mathNum[12]=8727;
+mathNames[13]='radic';  	mathNum[13]=8730;
+mathNames[14]='prop';   	mathNum[14]=8733;
+mathNames[15]='infin';  	mathNum[15]=8734;
+mathNames[16]='ang';    	mathNum[16]=8736;
+mathNames[17]='and';    	mathNum[17]=8743;
+mathNames[18]='or';     	mathNum[18]=8744;
+mathNames[19]='cap';    	mathNum[19]=8745;
+mathNames[20]='cup';    	mathNum[20]=8746;
+mathNames[21]='int';    	mathNum[21]=8747;
+mathNames[22]='there4'; 	mathNum[22]=8756;
+mathNames[23]='sim';    	mathNum[23]=8764;
+mathNames[24]='cong';   	mathNum[24]=8773;
+mathNames[25]='asymp';  	mathNum[25]=8776;
+mathNames[26]='ne';     	mathNum[26]=8800;
+mathNames[27]='equiv';  	mathNum[27]=8801;
+mathNames[28]='le';     	mathNum[28]=8804;
+mathNames[29]='ge';     	mathNum[29]=8805;
+mathNames[30]='sub';    	mathNum[30]=8834;
+mathNames[31]='sup';    	mathNum[31]=8835;
+mathNames[32]='nsub';   	mathNum[32]=8836;
+mathNames[33]='sube';   	mathNum[33]=8838;
+mathNames[34]='supe';   	mathNum[34]=8839;
+mathNames[35]='oplus';  	mathNum[35]=8853;
+mathNames[36]='otimes'; 	mathNum[36]=8855;
+mathNames[37]='perp';   	mathNum[37]=8869;
+mathNames[38]='sdot';   	mathNum[38]=8901;
+
+var techNames=new Array();	var techNum=new Array();
+techNames[0]='lceil';		techNum[0]=8968;
+techNames[1]='rceil';		techNum[1]=8969;
+techNames[2]='lfloor';		techNum[2]=8970;
+techNames[3]='rfloor';		techNum[3]=8971;
+techNames[4]='lang';		techNum[4]=9001;
+techNames[5]='rang';		techNum[5]=9002;
+
+var symbolNames=new Array();	var symbolNum=new Array();
+symbolNames[0]='loz';   	symbolNum[0]=9674;
+symbolNames[1]='';	symbolNum[1]='8480';
+symbolNames[2]='';	symbolNum[2]='8451';
+symbolNames[3]='';	symbolNum[3]='8453';
+symbolNames[4]='';	symbolNum[4]='8457';
+symbolNames[5]='';	symbolNum[5]='8470';
+symbolNames[6]='';	symbolNum[6]='8471';
+symbolNames[7]='';	symbolNum[7]='8478';
+symbolNames[8]='';	symbolNum[8]='8486';
+symbolNames[9]='';	symbolNum[9]='8487';
+symbolNames[10]='';	symbolNum[10]='9728';
+symbolNames[11]='';	symbolNum[11]='9729';
+symbolNames[12]='';	symbolNum[12]='9730';
+symbolNames[13]='';	symbolNum[13]='9731';
+symbolNames[14]='';	symbolNum[14]='9732';
+symbolNames[15]='';	symbolNum[15]='9733';
+symbolNames[16]='';	symbolNum[16]='9734';
+symbolNames[17]='';	symbolNum[17]='9735';
+symbolNames[18]='';	symbolNum[18]='9736';
+symbolNames[19]='';	symbolNum[19]='9737';
+symbolNames[20]='';	symbolNum[20]='9738';
+symbolNames[21]='';	symbolNum[21]='9739';
+symbolNames[22]='';	symbolNum[22]='9740';
+symbolNames[23]='';	symbolNum[23]='9741';
+symbolNames[24]='';	symbolNum[24]='9742';
+symbolNames[25]='';	symbolNum[25]='9743';
+symbolNames[26]='';	symbolNum[26]='9744';
+symbolNames[27]='';	symbolNum[27]='9745';
+symbolNames[28]='';	symbolNum[28]='9746';
+symbolNames[29]='';	symbolNum[29]='9747';
+symbolNames[30]='';	symbolNum[30]='9754';
+symbolNames[31]='';	symbolNum[31]='9755';
+symbolNames[32]='';	symbolNum[32]='9756';
+symbolNames[33]='';	symbolNum[33]='9757';
+symbolNames[34]='';	symbolNum[34]='9758';
+symbolNames[35]='';	symbolNum[35]='9759';
+symbolNames[36]='';	symbolNum[36]='9760';
+symbolNames[37]='';	symbolNum[37]='9761';
+symbolNames[38]='';	symbolNum[38]='9762';
+symbolNames[39]='';	symbolNum[39]='9763';
+symbolNames[40]='';	symbolNum[40]='9764';
+symbolNames[41]='';	symbolNum[41]='9765';
+symbolNames[42]='';	symbolNum[42]='9766';
+symbolNames[43]='';	symbolNum[43]='9767';
+symbolNames[44]='';	symbolNum[44]='9768';
+symbolNames[45]='';	symbolNum[45]='9769';
+symbolNames[46]='';	symbolNum[46]='9770';
+symbolNames[47]='';	symbolNum[47]='9771';
+symbolNames[48]='';	symbolNum[48]='9772';
+symbolNames[49]='';	symbolNum[49]='9773';
+symbolNames[50]='';	symbolNum[50]='9774';
+symbolNames[51]='';	symbolNum[51]='9775';
+symbolNames[52]='';	symbolNum[52]='9776';
+symbolNames[53]='';	symbolNum[53]='9777';
+symbolNames[54]='';	symbolNum[54]='9778';
+symbolNames[55]='';	symbolNum[55]='9779';
+symbolNames[56]='';	symbolNum[56]='9780';
+symbolNames[57]='';	symbolNum[57]='9781';
+symbolNames[58]='';	symbolNum[58]='9782';
+symbolNames[59]='';	symbolNum[59]='9783';
+symbolNames[60]='';	symbolNum[60]='9784';
+symbolNames[61]='';	symbolNum[61]='9785';
+symbolNames[62]='';	symbolNum[62]='9786';
+symbolNames[63]='';	symbolNum[63]='9787';
+symbolNames[64]='';	symbolNum[64]='9789';
+symbolNames[65]='';	symbolNum[65]='9790';
+symbolNames[66]='';	symbolNum[66]='9791';
+symbolNames[67]='';	symbolNum[67]='9792';
+symbolNames[68]='';	symbolNum[68]='9793';
+symbolNames[69]='';	symbolNum[69]='9794';
+symbolNames[70]='';	symbolNum[70]='9795';
+symbolNames[71]='';	symbolNum[71]='9796';
+symbolNames[72]='';	symbolNum[72]='9797';
+symbolNames[73]='';	symbolNum[73]='9798';
+symbolNames[74]='';	symbolNum[74]='9799';
+symbolNames[75]='';	symbolNum[75]='9800';
+symbolNames[76]='';	symbolNum[76]='9801';
+symbolNames[77]='';	symbolNum[77]='9802';
+symbolNames[78]='';	symbolNum[78]='9803';
+symbolNames[79]='';	symbolNum[79]='9804';
+symbolNames[80]='';	symbolNum[80]='9805';
+symbolNames[81]='';	symbolNum[81]='9806';
+symbolNames[82]='';	symbolNum[82]='9807';
+symbolNames[83]='';	symbolNum[83]='9808';
+symbolNames[84]='';	symbolNum[84]='9809';
+symbolNames[85]='';	symbolNum[85]='9810';
+symbolNames[86]='';	symbolNum[86]='9811';
+symbolNames[87]='';	symbolNum[87]='9812';
+symbolNames[88]='';	symbolNum[88]='9813';
+symbolNames[89]='';	symbolNum[89]='9814';
+symbolNames[90]='';	symbolNum[90]='9815';
+symbolNames[91]='';	symbolNum[91]='9816';
+symbolNames[92]='';	symbolNum[92]='9817';
+symbolNames[93]='';	symbolNum[93]='9818';
+symbolNames[94]='';	symbolNum[94]='9819';
+symbolNames[95]='';	symbolNum[95]='9820';
+symbolNames[96]='';	symbolNum[96]='9821';
+symbolNames[97]='';	symbolNum[97]='9822';
+symbolNames[98]='';	symbolNum[98]='9823';
+symbolNames[99]='spades';	symbolNum[99]='9824';
+symbolNames[100]='';	symbolNum[100]='9825';
+symbolNames[101]='';	symbolNum[101]='9826';
+symbolNames[102]='clubs';	symbolNum[102]='9827';
+symbolNames[103]='';	symbolNum[103]='9828';
+symbolNames[104]='hearts';	symbolNum[104]='9829';
+symbolNames[105]='diams';	symbolNum[105]='9830';
+symbolNames[106]='';	symbolNum[106]='9831';
+symbolNames[107]='';	symbolNum[107]='9832';
+symbolNames[108]='';	symbolNum[108]='9833';
+symbolNames[109]='';	symbolNum[109]='9834';
+symbolNames[110]='';	symbolNum[110]='9835';
+symbolNames[111]='';	symbolNum[111]='9836';
+symbolNames[112]='';	symbolNum[112]='9837';
+symbolNames[113]='';	symbolNum[113]='9838';
+symbolNames[114]='';	symbolNum[114]='9839';
+symbolNames[115]='';	symbolNum[115]='9985';
+symbolNames[116]='';	symbolNum[116]='9986';
+symbolNames[117]='';	symbolNum[117]='9987';
+symbolNames[118]='';	symbolNum[118]='9988';
+symbolNames[119]='';	symbolNum[119]='9990';
+symbolNames[120]='';	symbolNum[120]='9991';
+symbolNames[121]='';	symbolNum[121]='9992';
+symbolNames[122]='';	symbolNum[122]='9993';
+symbolNames[123]='';	symbolNum[123]='9996';
+symbolNames[124]='';	symbolNum[124]='9997';
+symbolNames[125]='';	symbolNum[125]='9998';
+symbolNames[126]='';	symbolNum[126]='9999';
+symbolNames[127]='';	symbolNum[127]='10000';
+symbolNames[128]='';	symbolNum[128]='10001';
+symbolNames[129]='';	symbolNum[129]='10002';
+symbolNames[130]='';	symbolNum[130]='10003';
+symbolNames[131]='';	symbolNum[131]='10004';
+symbolNames[132]='';	symbolNum[132]='10005';
+symbolNames[133]='';	symbolNum[133]='10006';
+symbolNames[134]='';	symbolNum[134]='10007';
+symbolNames[135]='';	symbolNum[135]='10008';
+symbolNames[136]='';	symbolNum[136]='10009';
+symbolNames[137]='';	symbolNum[137]='10010';
+symbolNames[138]='';	symbolNum[138]='10011';
+symbolNames[139]='';	symbolNum[139]='10012';
+symbolNames[140]='';	symbolNum[140]='10013';
+symbolNames[141]='';	symbolNum[141]='10014';
+symbolNames[142]='';	symbolNum[142]='10015';
+symbolNames[143]='';	symbolNum[143]='10016';
+symbolNames[144]='';	symbolNum[144]='10017';
+symbolNames[145]='';	symbolNum[145]='10075';
+symbolNames[146]='';	symbolNum[146]='10076';
+symbolNames[147]='';	symbolNum[147]='10077';
+symbolNames[148]='';	symbolNum[148]='10078';
+symbolNames[149]='';	symbolNum[149]='10084';
+
+
+function showDirect() {
+   charCode=document.getElementById("codeBox").value;
+   document.getElementById("codeBoxOutput").innerHTML=charCode;
+}
+
+function showTable() {
+   var tCount=0;
+   tableText="";
+   outTable=document.getElementById("tableOutput");
+   selectedTable = document.getElementById("charTables").selectedIndex;
+
+   switch (selectedTable) {
+      case 0: {namesArray=generalNames; numArray=generalNum; tableTitle="General Symbols"}
+      break;
+      case 1: {namesArray=intlNames; numArray=intlNum; tableTitle="International Characters"}
+      break;
+      case 2: {namesArray=greekNames; numArray=greekNum; tableTitle="Greek Symbols"}
+      break;
+      case 3: {namesArray=puncNames; numArray=puncNum; tableTitle="Punctuation Symbols"}
+      break;
+      case 4: {namesArray=arrowNames; numArray=arrowNum; tableTitle="Arrow Symbols"}
+      break;
+      case 5: {namesArray=mathNames; numArray=mathNum; tableTitle="Mathematical Operators"}
+      break;
+      case 6: {namesArray=techNames; numArray=techNum; tableTitle="Technical Symbols"}
+      break;
+      case 7: {namesArray=symbolNames; numArray=symbolNum; tableTitle="Miscellaneous Symbols"}
+      break;
+   }
+
+   tableText="<h2 id='tt'>"+ tableTitle +"</h2>";
+   tableText+="<table>";
+   while (tCount <= numArray.length-1) {
+      tableText+="<tr>";
+      for (j=0; j<=9 && tCount <= numArray.length-1 ; j++) {
+         tableText+="<td>";
+            tableText+="&#"+numArray[tCount]+";<br />";
+            tableText+="<span class='tName'>"+namesArray[tCount]+" </span>";
+            tableText+="<span class='tNum'>("+numArray[tCount]+") </span>";
+         tableText+="</td>";
+         tCount++;
+      }
+      tableText+="</tr>";
+   }
+   tableText+="</table>";
+   outTable.innerHTML=tableText;
+   
+}
+</script>
+
+<style type="text/css">
+/* use for all demo pages */
+   html       {height: 100%}
+   body       {background-color: white; background-image: url(demo2.gif); margin: 0px; 
+               width: 100%; height: 100%}
+   #demo_page {background-color: white; 
+               border-right: 5px solid rgb(0,0,128); position: absolute; top: 0px; left: 0px;
+               width: 900px; padding-bottom: 15px}
+   * html #demo_page {height: 100%}
+
+   #demo_intro {width: 100%; position: relative; margin: 0px 10px}
+   #demo_intro table {margin: 0px; padding: 0px; border: 0px; width: 97%}
+   #demo_intro table td {vertical-align: bottom; padding-bottom: 5px}
+   #h2heading {color:yellow; background-image: url(demo.gif); letter-spacing: 0.75em; 
+               font-family: Arial, Helvetica, sans-serif; width: 97%; 
+               font-size: 1.5em; margin: 0px; text-align: right; 
+               border: 1px solid black}
+
+   #para      {font-size: 1em; border: 1px solid black; width: 97%;
+               background-color: ivory}
+   #para p    {margin: 8px}
+
+   #demo_container {position: relative; top: 10px; left: 0px; width: 100%;
+                    margin: 0px 10px}
+   #demo_footer {text-align: center; font-size: 8pt; border-top: 1px solid black; 
+                 margin: 25px 10px; width: 97%}
+   span.btitle {font-style: italic}
+
+/* styles specific to this demo */
+
+   #directEnter {font-size: 1.2em; padding-left: 30px}
+   #codeBox {text-align: center}
+   #codeBoxOutput {background-color: ivory; border: 1px solid black; padding: 5px; width: 3em; text-align: center;
+                   vertical-align: middle; font-size: 2em}
+   #tt {font-family: Arial, Helvetica, sans-serif; margin: 10px 0px 0px; padding: 0px}
+   #tableEnter {font-size: 1.2em; padding-left: 30px; margin-top: 10px}
+   #tableoutput td {font-size: 1.8em; border: 1px solid black; text-align: center; width: 3em}
+   span.tName {font-size: 0.8em}
+   span.tNum {font-size: 0.8em; color: red}
+
+</style>
+</head>
+
+<body>
+<form id="charform" name="charform">
+<div id="demo_page">
+
+<div id="demo_intro">
+   <table>
+   <tr><td style="width: 50%"><img src="cengage.jpg" alt="Course Technology Cengage Learning" /></td>
+       <td style="width: 50%; text-align:right; font-family: Arial, Helvetica, sans-serif; font-size: 14pt">
+          New Perspectives on HTML and CSS<br />Tutorial 1
+   </td></tr>
+   </table>
+
+   <h2 id="h2heading">HTML Character Codes</h2>
+   <div id="para">
+      <p>This page demonstrates how to use HTML character codes to display an extended list
+      of character symbols in your Web page. Character symbols not found on your keyboard can be entered
+      into your Web page using the either:<br /><br />
+      <span style="font-family: monospace">&amp;#<i>code</i>;</span><br /><br />
+      where <i>code</i> is the code number for the character, or<br /><br />
+      <span style="font-family: monospace">&amp;<i>char</i>;</span><br /><br />
+      where <i>char</i> is the name assigned to the character. To view enter a character symbol, enter the 
+      HTML code for the character code number or name into the input box below and click the <b>Show</b> button.
+      To display a table of character symbols, select the table type from the drop-down list below and click
+      the <b>Show Table</b> button. The table contains a representation of the character as it appears on your 
+      browser. The character name and the character code number appear below the symbol.
+      <br /><br />Note that not all browsers support the complete
+      set of character code names and/or code numbers.
+      </p>
+  </div>
+
+   <div id="demo_container">
+      <div id="directEnter">
+         Enter a character code or character name:
+         <input id="codeBox" name="codeBox" size="12" />
+         <input type="button" value="Show" onClick="showDirect()" />
+            <div id="codeBoxOutput">&nbsp;</div>
+      </div>
+      <div id="tableEnter">
+         Select a table of characters from the list box:
+         <select id="charTables">
+            <option>General Symbols</option>
+            <option>International Characters</option>
+            <option>Greek Symbols</option>
+            <option>Punctuation Symbols</option>
+            <option>Arrow Symbols</option>
+            <option>Mathematial Operators</option>
+            <option>Technical Symbols</option>
+            <option>Miscellaneous Symbols</option>
+         </select>
+         <input type="button" value="Show Table" onClick="showTable()" />
+            <div id="tableOutput">
+            &nbsp;
+            </div>
+      </div>
+   </div>
+
+   <div id="demo_footer">
+      Carey, P.
+      <span class="btitle">New Perspectives on HTML and CSS</span>,
+      Course Technology: Boston, 2012.
+   </div>
+
+</div>
+</form>
+</body>
+</html>
+
+

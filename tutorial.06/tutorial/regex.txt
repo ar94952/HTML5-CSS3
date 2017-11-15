@@ -1,0 +1,10 @@
+Postal Code Regular Expression
+^\d{5}(\-\d{4})?$
+
+
+Phone Number Regular Expression
+^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$
+
+
+Red Ball Pizza Regular Expression
+^re\-\d{6}$

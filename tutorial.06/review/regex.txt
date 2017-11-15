@@ -1,0 +1,7 @@
+
+Phone Number Regular Expression
+^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$
+
+
+Delivery Time Regular Expression
+^([0-9]|1[012]):[0-5][0-9]\s?((a|p)m|(A|P)M)$

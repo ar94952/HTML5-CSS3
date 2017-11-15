@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<!-- 
+   New Perspectives on HTML and CSS
+   Tutorial 3
+   Tutorial Case
+
+   CSS Positioning Demo
+   Author: Patrick Carey
+   Date:   3/1/2014
+
+   Filename:         demo_positioning.htm
+   Supporting files: cengage.gif, demo.gif, demo2.gif, grid.gif, grid2.gif
+-->
+<title>CSS Positioning</title>
+<style type="text/css">
+/* use for all demo pages */
+   html       {height: 100%}
+   body       {background-color: white; background-image: url(demo2.gif); margin: 0px; 
+               width: 100%; height: 100%}
+   #demo_page {background-color: white; 
+               border-right: 5px solid rgb(0,0,128); position: absolute; top: 0px; left: 0px;
+               width: 900px; padding-bottom: 15px; min-height: 100%}
+   * html #demo_page {height: 100%}
+
+   #demo_intro {width: 100%; position: relative; margin: 0px 10px}
+   #demo_intro table {margin: 0px; padding: 0px; border: 0px; width: 97%}
+   #demo_intro table td {vertical-align: bottom; padding-bottom: 5px}
+   #h2heading {color:yellow; background-image: url(demo.gif); letter-spacing: 0.5em; 
+               font-family: Arial, Helvetica, sans-serif; width: 97%; 
+               font-size: 1.5em; margin: 0px; text-align: right; 
+               border: 1px solid black}
+
+   #para      {font-size: 1em; border: 1px solid black; width: 97%;
+               background-color: ivory}
+   #para p    {margin: 8px}
+
+   #demo_container {position: relative; top: 10px; left: 0px; width: 100%;
+                    margin: 0px 10px}
+   #demo_footer {text-align: center; font-size: 8pt; border-top: 1px solid black; 
+                 margin: 25px 10px; width: 97%; clear: left}
+   span.btitle {font-style: italic}
+
+/* styles specific to this demo */
+   body {background: white url(grid.gif)}
+   #demo_page {background-image: url(grid.gif); background-position: fixed}
+   #demo_intro {margin-bottom: 10px}
+   #form {font-family: Arial, Helvetica, sans-serif; margin-bottom: 10px;
+          position: relative; left: 600px}
+   #outer {width: 200px; height: 200px; background-color: red; border: 5px solid red; background-image: url(grid2.gif)}
+   #inner {width: 50px; height: 50px; background-color: yellow; border: 5px outset yellow}
+   #flow {width: 300px; height: 50px; border: 2px dotted black; margin-top: 10px;
+          margin-left: 12px; background-color: ivory}
+   #demo_footer {position: absolute; top: 700px; left: 0px}
+   #demo_page {border-right: 0px solid black; padding-left: 10px}
+
+</style>
+
+<script type="text/javascript">
+function moveit() {
+ outerbox=document.getElementById("outer");
+ innerbox=document.getElementById("inner");
+
+ opindex=document.csspform.outerpos.selectedIndex;
+ ipindex=document.csspform.innerpos.selectedIndex;
+ oppos=document.csspform.outerpos.options[opindex].value;
+ ippos=document.csspform.innerpos.options[ipindex].value;
+
+
+ if (oppos != "static") {
+    outerbox.style.position=oppos;
+    outerbox.style.top=document.csspform.outertop.value+"px";
+    outerbox.style.left=document.csspform.outerleft.value+"px";
+    document.csspform.outertop.disabled=false;
+    document.csspform.outerleft.disabled=false;
+ } else {
+    outerbox.style.position="";
+    outerbox.style.top="0px";
+    outerbox.style.left="0px";
+    document.csspform.outertop.disabled=true;
+    document.csspform.outerleft.disabled=true;
+ }
+ 
+ if (ippos != "static") {
+    innerbox.style.position=ippos;
+    innerbox.style.top=document.csspform.innertop.value+"px";
+    innerbox.style.left=document.csspform.innerleft.value+"px";
+    document.csspform.innertop.disabled=false;
+    document.csspform.innerleft.disabled=false;
+ } else {
+    innerbox.style.position="";
+    innerbox.style.top="0px";
+    innerbox.style.left="0px";
+    document.csspform.innertop.disabled=true;
+    document.csspform.innerleft.disabled=true;
+ }  
+}
+
+function resetform() {
+ document.csspform.outerpos.selectedIndex=0;
+ document.csspform.innerpos.selectedIndex=0;
+ document.csspform.outertop.value="0";
+ document.csspform.outerleft.value="0"
+ document.csspform.outertop.disabled=true;
+ document.csspform.outerleft.disabled=true;
+ document.csspform.innertop.value="0";
+ document.csspform.innerleft.value="0"
+ document.csspform.innertop.disabled=true;
+ document.csspform.innerleft.disabled=true;
+ moveit();
+}
+</script>
+
+</head>
+
+<body>
+<form name="csspform" id="csspform">
+<div id="demo_page">
+
+<div id="demo_intro">
+   <table>
+   <tr><td style="width: 50%"><img src="cengage.gif" alt="Course Technology Cengage Learning" /></td>
+       <td style="width: 50%; text-align:right; font-family: Arial, Helvetica, sans-serif; font-size: 14pt">
+          New Perspectives on HTML and CSS<br />Tutorial 4
+   </td></tr>
+   </table>
+
+   <h2 id="h2heading">CSS Positioning </h2>
+   <div id="para">
+   <p>This page demonstrates how different position styles affect layout. Select position
+      values from the selection lists and input boxes below. The first column of input fields 
+      sets the position of the larger red box. The second column of input fields sets the 
+      position of the smaller yellow box. To reset both colored boxes to their default 
+      positions, click the <b>reset</b> button. The position of the paragraph with the
+      dotted outline can't be 
+      set, but it may change in relation to the movements of the two colored boxes.</p>
+
+      <table style="width: 300px; font-family: Arial, Helvetica, sans-serif; font-size: 8pt;
+                    border: 1px solid black; background-color: white;
+                    position: relative; left: 310px; margin-bottom: 10px" cellspacing="2">
+
+      <tr>
+          <td></td>
+          <th>position</th>
+          <th>left</th>
+          <th>top</th>
+      </tr>
+      <tr>  
+          <th style="background-color: red; color: white">outer</th>
+          <td style="background-color: red">
+             <select name="outerpos" id="outerpos" onchange="moveit()">
+                 <option value="static" selected="selected">static</option>
+                 <option value="absolute">absolute</option>
+                 <option value="relative">relative</option>
+                 <option value="fixed">fixed</option>
+                 <option value="inherit">inherit</option>
+             </select>
+          </td>
+          <td style="background-color: red">
+             <input name="outerleft" id="outerleft"  disabled="disabled" value="0" size="5"
+                    style="text-align: right" onchange="moveit()" />
+          </td>
+          <td style="background-color: red">
+             <input name="outertop" id="outertop"  disabled="disabled" value="0" size="5"
+                    style="text-align: right" onchange="moveit()" />
+          </td>
+      </tr>
+      <tr>
+          <th style="background-color: yellow; color: black">inner</th>
+          <td style="background-color: yellow">
+             <select name="innerpos" id="innerpos" onchange="moveit()">
+                 <option value="static" selected="selected">static</option>
+                 <option value="absolute">absolute</option>
+                 <option value="relative">relative</option>
+                 <option value="fixed">fixed</option>
+                 <option value="inherit">inherit</option>
+             </select>
+          </td>
+          <td style="background-color: yellow">
+             <input name="innerleft" id="innerleft" disabled="disabled" value="0" size="5"
+                    style="text-align: right" onchange="moveit()" />
+          <td style="background-color: yellow">
+             <input name="innertop" id="innertop"  disabled="disabled" value="0" size="5"
+                    style="text-align: right" onchange="moveit()" />
+          </td>
+          <td style="text-align: center">
+             <input type="button" value="   reset   " onclick="resetform()" />
+          </td>
+      </tr>
+      </table>
+
+   </div>
+
+
+
+</div>
+
+      <div id="outer">
+         <div id="inner">
+         &nbsp;
+         </div>
+      </div>
+
+      <p id="flow">
+         Sample paragraph moves in relation to the placement of the outer and inner boxes.
+      </p>
+
+
+<div id="demo_footer">
+   Carey, P.
+   <span class="btitle">New Perspectives on HTML and CSS</span>,
+   Course Technology: Boston, 2012.
+</div>
+
+</div>
+</form>
+</body>
+</html>
+
+

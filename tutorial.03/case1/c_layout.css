@@ -1,0 +1,33 @@
+﻿/*
+   New Perspectives on HTML
+   Tutorial 3
+   Case Problem 1
+
+   ICI Layout Styles
+   Author: Sela Dawes
+   Date:   3/1/2014
+
+   Filename:         c_layout.css
+   Supporting Files: none
+
+*/
+
+/* Layout styles */
+
+
+body {
+   margin: 0px auto;
+   padding: 0px;
+   width: 98%;
+   max-width: 800px;
+   min-width: 250px;
+}
+
+header, footer {
+   margin: 0px auto;
+}
+
+article img {
+   float: right;
+   margin: 15px 0px 15px 15px;
+}

@@ -1,0 +1,111 @@
+/*
+   New Perspectives on HTML
+   Tutorial 1
+   Case Problem 1
+   Math High Style Sheet
+   Author: Laureen Coe
+   Date:   3/1/2014
+
+   Filename:         mhstyles.css
+   Supporting Files: none
+
+*/
+
+/* Section Styles */
+
+body {
+margin: 0px auto;
+padding: 0px;
+line-height: 1.5em;
+width: 98%;
+max-width: 980px;
+min-width: 250px;
+font-family: Times New Roman, serif;
+}
+
+header {
+width: 100%;
+text-align: left;
+}
+
+article {
+width: 65%;
+float: left;
+
+}
+
+aside {
+width: 34%;
+margin-top: 25px;
+background-color: rgb(212, 212, 212);
+float: right;
+border: 3px solid rgb(102, 102, 102);
+ -moz-border-radius: 15px;
+ border-radius: 15px;
+
+}
+
+aside h1 {
+font-size: 1em;
+margin: 0px;
+text-align: center;
+margin: 5px 5px;
+}
+
+aside p {
+font-size: 0.8em;
+margin: 5px 5px;
+}
+
+aside h1+p+p {
+text-align: center;
+font-size: 1.1em;
+}
+
+aside h1+p+p+p+p {
+text-align: center;
+font-size: 1.1em;
+}
+
+footer {
+display: block;
+width: 100%;
+clear: left;
+text-align: center;
+font-size: 0.8em;
+font-style: normal;
+font-variant: small-caps;
+border-top: 1px solid black;
+background-color: rgb(221, 221, 221);
+}
+
+/* Block Styles */
+h1, h2, h3, h4, h5, h6 {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+header h1 {
+margin: 1em 0em;
+font-size: 2em;
+}
+
+h2 {
+margin: 1em 0em;
+font-size: 1.5em;
+}
+
+header h1 {
+margin: 0px;
+}
+
+header h2 {
+font-size: 1.2em;
+font-style: italic;
+margin: 0em;
+padding-bottom: 0.5em;
+border-bottom:1px black solid;
+}
+
+article p {
+margin: 0.2em 0.9em 0.7em 0em;
+}

@@ -1,0 +1,103 @@
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 5
+   Case Problem 3
+
+   dHome Web Site Style Sheet
+
+   Filename:         dome.css
+   Supporting files: 
+
+*/
+
+/* Default styles */
+* {
+   margin: 0px;
+   padding: 0px;
+}
+
+header, nav, section, footer {
+   display: block;
+}
+
+
+
+/* Body styles */
+body {
+   font-size: 18px; 
+   font-family: Verdana, Geneva, sans-serif;
+   margin: 0px auto;
+   width: 950px;
+}
+
+
+
+/* Navigation list */
+
+nav {
+   position: relative;
+   top: -60px;
+   left: 200px;
+}
+
+nav ul li {
+   background-color: rgb(152, 228, 215);
+   border: 3px outset rgb(49, 195, 168);
+   -moz-border-radius: 20px;
+   -webkit-border-radius: 20px;
+   border-radius: 20px;
+
+   display: block;
+   float: left;
+   height: 30px;
+   line-height: 30px;
+   font-size: 12px;
+   text-align: center;
+   margin: 0px 5px;
+   min-width: 60px;
+   padding: 0px 10px;
+}
+
+nav ul li a {
+   color: black;
+   text-decoration: none;
+}
+
+nav ul li:hover {
+   background-color: rgb(228, 152, 154);
+}
+
+
+
+/* Section styles */
+
+section {
+   clear: left;
+}
+
+section p {
+   margin: 0px 0px 20px 10px;
+}
+
+section p b {
+   color: rgb(82,158,145); 
+   letter-spacing: 3px;
+}
+
+
+
+/* Footer and address styles */
+
+footer {
+   clear: both;
+   padding-top: 20px;
+}
+
+footer address {
+   border-top: 2px solid rgb(132,208,195);
+   font-size: 10px;
+   font-style: normal; 
+   font-variant: small-caps; 
+   text-align: center;
+}
+

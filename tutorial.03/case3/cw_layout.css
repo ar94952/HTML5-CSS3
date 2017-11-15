@@ -1,0 +1,79 @@
+﻿/*
+   New Perspectives on HTML and CSS
+   Tutorial 3
+   Case Problem 3
+
+   Civil War History Layout Style
+   Author: Peter Craft
+   Date:   3/1/2014
+
+   Filename:         cw_layout.css
+   Supporting Files: none
+
+*/
+
+/* Layout styles */
+
+
+body {
+   margin: 0px;
+   padding: 0px;
+   width: 1000px;
+}
+
+body > header > h1 {
+   height: 90px;
+   margin: 0px;
+   width: 100%;
+}
+
+p {
+   margin: 0px 10px 10px 10px;
+}
+
+nav.horizontal ul {
+   display: block;
+   width: 950px;
+   height: 20px;
+}
+
+nav.horizontal ul li {
+   display: block;
+   float: left;
+   text-align: center;
+   width: 150px;
+}
+
+nav.vertical {
+   clear: left;
+   float: left;
+   margin-right: 0px;
+   width: 300px;
+}
+
+section {
+   float: left;
+   width: 700px;
+}
+
+article {
+   float: left;
+   width: 400px;
+}
+
+aside {
+   display: block;
+   width: 300px;
+   float: left;
+}
+
+aside img {
+   display: block;
+   width: 200px;
+   margin: 0px auto 10px;
+}
+
+footer {
+   clear: left;
+   width: 1000px;
+}

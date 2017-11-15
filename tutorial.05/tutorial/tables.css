@@ -1,0 +1,77 @@
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 5
+   Tutorial Case
+
+   Tables Style Sheet
+   Author: Anthony Rivera	
+   Date:   03/26/2017
+
+   Filename:         tables.css
+   Supporting Files: 
+
+*/
+
+/* Styles for the schedule table */
+table.schedule {
+	border: 10px outset rgb(153, 0, 153);
+	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.75em;
+	width: 100%;
+}
+table.schedule th, table.schedule td {
+	border: 1px solid gray;
+}
+
+/* Table header styles */
+table.schedule thead {
+	background-color: rgb(203, 50, 203);
+	color: white;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+table.schedule thead tr {
+	height: 50px;
+}
+/* Table body styles */
+table.schedule tbody tr {
+	height: 40px;
+}
+
+table.schedule tbody td {
+	padding: 5px;
+	vertical-align: top;
+}
+
+/* Styles for the first column */
+table.schedule col.firstCol {
+	background-color: rgb(255, 255, 192);
+	width: 7%;
+}
+
+/* Styles for the remaining columns */
+	table.schedule col.dayCols {
+	width: 13%;
+}
+
+/* Styles for the table caption */
+table.schedule caption {
+	caption-side: bottom;
+	text-align: right;
+}
+
+/* Two column layout for the introductory paragraph */
+section#main p {
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
+
+	-moz-column-gap: 20px;
+	-webkit-column-gap: 20px;
+	column-gap: 20px;
+
+	-moz-column-rule: 2px solid rgb(153, 0, 153);
+	-webkit-column-rule: 2px solid rgb(153, 0, 153);
+	column-rule: 2px solid rgb(153, 0, 153);
+}
